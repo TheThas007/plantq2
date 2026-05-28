@@ -1,0 +1,2 @@
+/api/plantnet/*  https://my-api.plantnet.org/:splat  200!
+/*  /index.html  200
