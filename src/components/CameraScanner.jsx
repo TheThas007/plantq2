@@ -30,10 +30,8 @@ const CameraScanner = () => {
         });
       }
       
+      // Only update state — srcObject is set in useEffect after video element renders
       setStream(mediaStream);
-      if (videoRef.current) {
-        videoRef.current.srcObject = mediaStream;
-      }
     } catch (err) {
       setErrorMsg("Camera access denied or not available. " + err.message);
     }
@@ -150,6 +148,14 @@ const CameraScanner = () => {
     setAnalysisResult(null);
     setErrorMsg('');
   };
+
+  // Attach stream to video element AFTER it mounts in the DOM
+  useEffect(() => {
+    if (stream && videoRef.current) {
+      videoRef.current.srcObject = stream;
+      videoRef.current.play().catch(err => console.error("Video play error:", err));
+    }
+  }, [stream]);
 
   useEffect(() => {
     return () => stopCamera();
