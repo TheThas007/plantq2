@@ -187,7 +187,12 @@ const AgriNews = () => {
               filteredNews.map(article => (
                 <div key={article.id} className="news-card" style={{ background: 'var(--card-bg)', borderRadius: '24px', overflow: 'hidden', border: '1px solid var(--border-color)', boxShadow: 'var(--shadow-sm)', transition: 'transform 0.3s ease', display: 'flex', flexDirection: 'column' }}>
                   <div style={{ position: 'relative', height: '200px', overflow: 'hidden' }}>
-                    <img src={article.urlToImage} alt="news" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }} />
+                    <img 
+                      src={article.urlToImage || 'https://placehold.co/600x400/10b981/ffffff?text=Agri+News'} 
+                      alt="news" 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }} 
+                      onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/600x400/10b981/ffffff?text=Agri+News'; }}
+                    />
                     <span style={{ position: 'absolute', top: '15px', left: '15px', background: 'var(--emerald-500)', color: '#fff', padding: '0.3rem 0.8rem', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 'bold', textTransform: 'uppercase' }}>
                       {t(`news.filter.${article.category}`, article.category)}
                     </span>
