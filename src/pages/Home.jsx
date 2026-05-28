@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import CameraScanner from '../components/CameraScanner';
 import SmartWeather from '../components/SmartWeather';
 import AgriNews from '../components/AgriNews';
@@ -34,9 +35,9 @@ const Home = () => {
               <a href="#scanner" onClick={(e) => { e.preventDefault(); document.getElementById('scanner')?.scrollIntoView({ behavior: 'smooth' }); }} className="btn-primary" style={{ padding: '0.8rem 2rem', fontSize: '1rem', borderRadius: '50px', background: '#22c55e', color: '#fff', border: 'none', boxShadow: '0 10px 25px -5px rgba(34, 197, 94, 0.5)', transition: 'all 0.3s ease', minWidth: '200px' }}>
                 {t('hero.btn.scan')}
               </a>
-              <a href="/experts" className="btn-secondary" style={{ padding: '0.8rem 2rem', fontSize: '1rem', borderRadius: '50px', background: 'rgba(255,255,255,0.1)', color: '#fff', border: '1px solid rgba(255,255,255,0.2)', backdropFilter: 'blur(10px)', transition: 'all 0.3s ease', minWidth: '200px' }}>
+              <Link to="/experts" className="btn-secondary" style={{ padding: '0.8rem 2rem', fontSize: '1rem', borderRadius: '50px', background: 'rgba(255,255,255,0.1)', color: '#fff', border: '1px solid rgba(255,255,255,0.2)', backdropFilter: 'blur(10px)', transition: 'all 0.3s ease', minWidth: '200px', display: 'inline-block' }}>
                 {t('hero.btn.expert')}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
