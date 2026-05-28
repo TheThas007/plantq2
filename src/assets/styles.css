@@ -2968,6 +2968,14 @@ button { cursor: pointer; }
   .hero-title {
     font-size: var(--fs-4xl);
   }
+  .hero-buttons, .scanner-actions {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
   .hero-stats {
     flex-direction: column;
     gap: var(--space-4);

@@ -176,7 +176,7 @@ const CameraScanner = () => {
 
       {stream && !capturedImage && (
         <div className="camera-view">
-          <video ref={videoRef} autoPlay playsInline style={{ width: '100%', borderRadius: '12px' }} />
+          <video ref={videoRef} autoPlay playsInline muted style={{ width: '100%', borderRadius: '12px' }} />
           <div className="camera-controls" style={{ marginTop: '1rem', display: 'flex', gap: '1rem', justifyContent: 'center' }}>
             <button className="btn-primary" onClick={captureImage}>Capture</button>
             <button className="btn-secondary" onClick={stopCamera}>Cancel</button>
