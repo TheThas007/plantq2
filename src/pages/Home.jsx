@@ -31,7 +31,7 @@ const Home = () => {
               {t('hero.desc')}
             </p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-              <a href="#scanner" className="btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem', borderRadius: '50px', background: '#22c55e', color: '#fff', border: 'none', boxShadow: '0 10px 25px -5px rgba(34, 197, 94, 0.5)', transition: 'all 0.3s ease' }}>
+              <a href="#scanner" onClick={(e) => { e.preventDefault(); document.getElementById('scanner')?.scrollIntoView({ behavior: 'smooth' }); }} className="btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem', borderRadius: '50px', background: '#22c55e', color: '#fff', border: 'none', boxShadow: '0 10px 25px -5px rgba(34, 197, 94, 0.5)', transition: 'all 0.3s ease' }}>
                 {t('hero.btn.scan')}
               </a>
               <a href="/experts" className="btn-secondary" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem', borderRadius: '50px', background: 'rgba(255,255,255,0.1)', color: '#fff', border: '1px solid rgba(255,255,255,0.2)', backdropFilter: 'blur(10px)', transition: 'all 0.3s ease' }}>
