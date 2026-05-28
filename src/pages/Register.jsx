@@ -13,7 +13,7 @@ const Register = () => {
     e.preventDefault();
     try {
       await registerUser(email, password, name);
-      navigate('/dashboard');
+      navigate('/');
     } catch (err) {
       setError(err.message);
     }
