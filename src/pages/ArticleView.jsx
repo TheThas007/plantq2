@@ -60,7 +60,12 @@ const ArticleView = () => {
 
       {/* Hero Image */}
       <div style={{ position: 'relative', width: '100%', height: '50vh', minHeight: '400px' }}>
-        <img src={article.image} alt={title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <img 
+          src={article.image || 'https://placehold.co/800x400/10b981/ffffff?text=Article'} 
+          alt={title} 
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+          onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/800x400/10b981/ffffff?text=Article'; }}
+        />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, var(--bg-primary) 0%, transparent 100%)' }}></div>
       </div>
 

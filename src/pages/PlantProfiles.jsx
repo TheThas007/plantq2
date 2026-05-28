@@ -141,7 +141,12 @@ const PlantProfiles = () => {
               <div key={plant.id || idx} className="plant-card" style={{ display: 'flex', flexDirection: 'column', background: 'var(--card-bg)', borderRadius: '16px', overflow: 'hidden', boxShadow: 'var(--shadow-sm)' }}>
                 <div style={{ width: '100%', height: '200px', background: 'var(--bg-tertiary)', overflow: 'hidden' }}>
                   {plant.image ? (
-                    <img src={plant.image} alt={plant.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img 
+                      src={plant.image || 'https://placehold.co/400x400/10b981/ffffff?text=Plant'} 
+                      alt={plant.name} 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                      onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x400/10b981/ffffff?text=Plant'; }}
+                    />
                   ) : (
                     <div style={{ padding: '2rem', textAlign: 'center', color: 'var(--text-secondary)' }}>No Image</div>
                   )}

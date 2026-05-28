@@ -128,7 +128,12 @@ const LearningCenter = () => {
                 onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }}
               >
                 <div style={{ position: 'relative', height: '220px', overflow: 'hidden' }}>
-                  <img src={article.image} alt="article cover" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img 
+                    src={article.image || 'https://placehold.co/800x400/10b981/ffffff?text=Article'} 
+                    alt="article cover" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                    onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/800x400/10b981/ffffff?text=Article'; }}
+                  />
                   {article.tags && article.tags[0] && (
                     <span style={{ position: 'absolute', top: '15px', left: '15px', background: 'var(--emerald-500)', color: '#fff', padding: '0.4rem 1rem', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 'bold', textTransform: 'uppercase', backdropFilter: 'blur(4px)', backgroundColor: 'rgba(16,185,129,0.85)' }}>
                       {article.tags[0]}
