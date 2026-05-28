@@ -60,14 +60,14 @@ const Navbar = ({ user }) => {
           <span>PlantIQ</span>
         </Link>
         <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-          <Link to="/">{t('nav.home')}</Link>
-          <Link to="/#scanner">{t('nav.scan')}</Link>
-          <Link to="/profiles">{t('nav.encyclopedia', 'Encyclopedia')}</Link>
-          <Link to="/community">{t('nav.community', 'Community')}</Link>
-          <Link to="/experts">{t('nav.experts', 'Experts')}</Link>
-          <Link to="/market">{t('nav.market', 'Market')}</Link>
-          <Link to="/learning">{t('nav.learning', 'Learning Center')}</Link>
-          <Link to="/about">{t('nav.about', 'About Us')}</Link>
+          <Link to="/" onClick={() => setIsMenuOpen(false)}>{t('nav.home')}</Link>
+          <Link to="/#scanner" onClick={() => setIsMenuOpen(false)}>{t('nav.scan')}</Link>
+          <Link to="/profiles" onClick={() => setIsMenuOpen(false)}>{t('nav.encyclopedia', 'Encyclopedia')}</Link>
+          <Link to="/community" onClick={() => setIsMenuOpen(false)}>{t('nav.community', 'Community')}</Link>
+          <Link to="/experts" onClick={() => setIsMenuOpen(false)}>{t('nav.experts', 'Experts')}</Link>
+          <Link to="/market" onClick={() => setIsMenuOpen(false)}>{t('nav.market', 'Market')}</Link>
+          <Link to="/learning" onClick={() => setIsMenuOpen(false)}>{t('nav.learning', 'Learning Center')}</Link>
+          <Link to="/about" onClick={() => setIsMenuOpen(false)}>{t('nav.about', 'About Us')}</Link>
         </div>
         <div className="nav-actions">
           <Link to="/admin" title="Admin Panel" style={{ textDecoration: 'none', fontSize: '1.2rem', padding: '0 0.5rem' }}>⚙️</Link>
@@ -94,6 +94,7 @@ const Navbar = ({ user }) => {
           <span></span>
           <span></span>
         </div>
+        <div className={`mobile-overlay ${isMenuOpen ? 'active' : ''}`} onClick={() => setIsMenuOpen(false)}></div>
       </div>
     </nav>
   );

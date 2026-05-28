@@ -8,7 +8,7 @@ const mockExperts = [
     role: 'Senior Agronomist',
     experience: '15 Years Experience',
     specialty: 'Crop Diseases, Soil Health',
-    image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Aravind'
+    image: 'https://api.dicebear.com/9.x/avataaars/svg?seed=Aravind'
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const mockExperts = [
     role: 'Horticulturist',
     experience: '8 Years Experience',
     specialty: 'Indoor Plants, Organic Farming',
-    image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Priya'
+    image: 'https://api.dicebear.com/9.x/avataaars/svg?seed=Priya'
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const mockExperts = [
     role: 'Agricultural Consultant',
     experience: '20 Years Experience',
     specialty: 'Pest Control, Irrigation',
-    image: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Saman'
+    image: 'https://api.dicebear.com/9.x/avataaars/svg?seed=Saman'
   }
 ];
 
